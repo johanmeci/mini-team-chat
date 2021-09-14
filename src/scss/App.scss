@@ -1,0 +1,283 @@
+$primaryColor : #101225;
+$secondaryColor : #66bb6a;
+$AltColor : #191b30;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    /* background: $AltColor; */
+    background-image: url('../img/backgroundApp.jpg');
+    background-size: contain;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 67px);
+    overflow: hidden;
+
+    .btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        
+        span {
+            margin: auto;
+            position: relative;
+            top: 2px;
+            left: 2px;
+        }
+    }
+}
+
+#root {
+    height: 100%;
+}
+
+.containerPrincipal {
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+
+    .containerLogin {
+        background: white;
+        width: 300px;
+        height: 350px;
+        position: absolute;
+        top: calc(calc(100% - 350px) / 2);
+        right: calc(calc(100% - 300px) / 2);
+        display: flex;
+        flex-direction: column;
+
+        .loginTitle {
+            background: $secondaryColor;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            padding: 1rem 0;
+            text-transform: uppercase;
+        }
+
+        button {
+            background: $secondaryColor;
+            margin: auto;
+            display: block;
+            width: 150px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            .spanBtn {
+                margin: 0 auto 0 .5rem;
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+
+    header {
+        background: $secondaryColor;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        color: white;
+
+        .spanWelcome {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button {
+            margin-left: auto;
+        }
+    }
+
+    .containerBody {
+        height: 100%;
+        background: $primaryColor;
+        display: flex;
+
+        .sectionLeft {
+            background: white;
+            width: 200px;
+            height: 100%;
+            flex: 0 1 200px;
+            padding-top: .5rem;
+
+            .sectionTitle {
+                text-align: center;
+                display: block;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-bottom: 1px solid rgba($primaryColor, 0.2);
+                padding-bottom: .5rem;
+            }
+        }
+
+        .sectionRight {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex: 1;
+
+            .containerMessage {
+                overflow-y: scroll;
+                height: 100%;
+                padding: 1.5rem 1rem 0 1rem;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: $primaryColor;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: $secondaryColor;
+                    border-radius: 4px;
+                }
+
+                .divMessage {
+                    position: relative;
+                    margin-bottom: 1rem;
+                    margin-left: -.5rem;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    height: auto;
+                    max-width: 500px;
+    
+                    img {
+                        border-radius: 25px;
+                        margin-right: .5rem;
+                        width: 32px;
+                        height: 32px;
+                        margin-top: auto;
+                    }
+    
+                    .divTxt {
+                        flex: 1;
+                        height: 100%;
+                        background-color: white;
+                        color: $primaryColor;
+                        border-radius: 10px 25px 25px 0;
+                        padding: .3rem 0 .4rem 1rem;
+    
+                        .spanName {
+                            margin-bottom: .3rem;
+                            display: block;
+                            font-weight: 700;
+                        }
+    
+                        .spanMessage {
+                            display: block;
+                            text-align: left;
+                            line-height: 1;
+                        }
+                    }
+    
+                    .spanTime {
+                        position: absolute;
+                        bottom: 0;
+                        right: 15px;
+                        font-size: .6rem;
+                        color: $primaryColor;
+                    }
+    
+                    &.myMessage {
+                        height: 35px;
+                        width: calc(100% - 2rem);
+                        margin-left: auto;
+    
+                        img {
+                            display: none;
+                        }
+    
+                        .divTxt {
+                            border-radius: 20px 15px 0 20px;
+                            background-color: $secondaryColor;
+                            color: white;
+    
+                            .spanName {
+                                display: none;
+                            }
+    
+                            .spanMessage {
+                                margin-bottom: 0;
+                                margin: auto;
+                            }
+                        }
+    
+                        .spanTime {
+                            color: white;
+                            right: 5px;
+                        }
+                    }
+    
+                    button {
+                        position: absolute;
+                        top: -3px;
+                        right: -1px;
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        background-color: #ef5350;
+    
+                        span {
+                            margin: auto;
+                            position: relative;
+                            top: 2px;
+                            left: inherit;
+                        }
+                    }
+                }
+
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+                position: relative;
+                height: 35px;
+                margin: .5rem;
+
+                &:focus-visible,
+                &:focus {
+                    outline: none;
+                }
+
+                input {
+                    flex: 1;
+                    border: none;
+                    height: 100%;
+                    padding: 0 .4rem 0 1rem;
+                    border-radius: 25px;
+
+                    &:focus-visible,
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .btn-send {
+                    background-color: transparent;
+                    position: absolute;
+                    top: 0;
+                    right: 10px;
+                }
+            }
+        }
+    }
+}
