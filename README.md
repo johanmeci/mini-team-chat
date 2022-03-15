@@ -1,6 +1,6 @@
 # Mini Team Chat
 
-- Login Google, no se hizo por medio de registro.
+- Login Google
 - Firebase v8.2.2
 - react-ionicons
 - SASS
