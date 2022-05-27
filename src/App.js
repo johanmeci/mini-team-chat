@@ -15,12 +15,12 @@ import 'firebase/firestore';
 import './scss/App.scss';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDMR5vu8miGDwm83REHVluvfM9QM_53BPE",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "mini-team-chat.firebaseapp.com",
   projectId: "mini-team-chat",
   storageBucket: "mini-team-chat.appspot.com",
-  messagingSenderId: "470860763420",
-  appId: "1:470860763420:web:66a4d033b9fdeb000d6ad9"
+  messagingSenderId: process.env.REACT_APP_MSG_ID,
+  appId: process.env.REACT_APP_FIREBASE_API_ID
 });
 
 const auth = firebase.auth();
